@@ -12,6 +12,7 @@ bootstrap-flask = "*"
 flask-moment = "*"
 flask-debugtoolbar = "*"
 faker = "*"
+flask-wtf = "*"
 
 [requires]
 python_version = "3.8"
