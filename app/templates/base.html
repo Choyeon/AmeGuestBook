@@ -1,22 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}AmeGuestBook{% endblock %}</title>
-    <link rel="icon" href=" {{ url_for('static',filename='favicon.ico') }} ">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 </head>
 <body>
 <main class="container">
     <header>
         <h1 class="text-center display-4">
-            <a href="{{ url_for('index') }}" class="text-success">
-                <strong>发布留言</strong>
-            </a>
+            <a href="{{ url_for('index') }}" class="text-success"><strong>GuestBook</strong></a>
+            <small class="text-muted sub-title">在线留言板Demo</small>
         </h1>
     </header>
     {% for message in get_flashed_messages() %}
@@ -25,16 +22,23 @@
             {{ message }}
         </div>
     {% endfor %}
-    {% block content %}
-    {% endblock %}
-    {% block footer %}
-        ...
-        <p><a href="#" id="bottom" title="GoTop">&uarr;</a></p>
-    {% endblock %}
+    {% block content %}{% endblock %}
+    <footer class="text-center">
+        {% block footer %}
+            <small> &copy; 2020 <a href="http://choyeon.cn" title="Written by Choyeon">Choyeon</a> /
+                <a href="https://github.com/shinechoyeon/AmeGuestBook" title="Fork me on GitHub">GitHub</a>
+            </small>
+            <p><a id="bottom" href="#" title="Go Top">&uarr;</a></p>
+        {% endblock %}
+    </footer>
 </main>
-<script type="text/javascript" src="{{ url_for('static',filename='js/jquery.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static',filename='js/popper.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static',filename='js/script.js') }}"></script>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.slim.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+{{ moment.include_moment(local_js=url_for('static', filename='js/moment-with-locales.min.js')) }}
+{{ moment.locale('zh-cn') }}
 </body>
 </html>
+

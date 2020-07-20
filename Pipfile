@@ -13,6 +13,7 @@ flask-moment = "*"
 flask-debugtoolbar = "*"
 faker = "*"
 flask-wtf = "*"
+flask-migrate = "*"
 
 [requires]
 python_version = "3.8"
