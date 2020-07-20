@@ -7,6 +7,11 @@ verify_ssl = true
 
 [packages]
 flask = "*"
+flask-sqlalchemy = "*"
+bootstrap-flask = "*"
+flask-moment = "*"
+flask-debugtoolbar = "*"
+faker = "*"
 
 [requires]
 python_version = "3.8"
