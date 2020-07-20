@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}AmeGuestBook{% endblock %}</title>
+    <link rel="icon" href=" {{ url_for('static',filename='favicon.ico') }} ">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+<main class="container">
+    <header>
+        <h1 class="text-center display-4">
+            <a href="{{ url_for('index') }}" class="text-success">
+                <strong>发布留言</strong>
+            </a>
+        </h1>
+    </header>
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% block content %}
+    {% endblock %}
+    {% block footer %}
+        ...
+        <p><a href="#" id="bottom" title="GoTop">&uarr;</a></p>
+    {% endblock %}
+</main>
+<script type="text/javascript" src="{{ url_for('static',filename='js/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/popper.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/script.js') }}"></script>
+</body>
+</html>
