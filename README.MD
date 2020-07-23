@@ -14,9 +14,9 @@ pipenv shell # 切换到虚拟环境
 flask run # 直接运行Flask服务器即可查看效果 内置了本地的SQLite数据库不需要配置
 ```
 
-#### 效果图![1](assets/1.png)
+#### 效果图![1](https://github-photo-1252181153.cos.ap-shanghai.myqcloud.com/1.png)
 
-![2](assets/2.png)
+![2](https://github-photo-1252181153.cos.ap-shanghai.myqcloud.com/2.png)
 
 #### 目录结构
 
