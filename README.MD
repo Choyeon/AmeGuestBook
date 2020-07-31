@@ -5,7 +5,7 @@
 #### 快速开始
 
 ```shell
-git clone https://github.com/shinechoyeon/AmeGuestBook.git
+git clone https://github.com/Choyeon/AmeGuestBook.git
 cd AmeGuestBook
 # 确保安装了Python3.X
 # 如果没有pipenv使用pip3 install pipenv 安装
